@@ -1,0 +1,83 @@
+:root {
+    --main-brown: #CB997E;
+    --light-brown: #DDBEA9;
+    --light-color: #FFE8D6;
+    --light-green-color: #B7B7A4;
+    --green-color: #A5A58D;
+    --dark-green-color: #6B705C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-green-color), var(--light-brown));
+    color: var(--light-green-color);
+    padding: 10px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.calculator h1 {
+    font-size: 60px;
+}
+
+.calculator h1 span {
+    color: var(--green-color);
+}
+
+.input-box {
+    margin: 40px 0;
+    padding: 35px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    background: var(--light-color);
+    flex: 1;
+    margin-right: 20px;
+    padding: 14px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.input-box button {
+    background: var(--dark-green-color);
+    border: 0;
+    outline: 0;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.input-box input::-webkit-calendar-picker-indicator {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+}
