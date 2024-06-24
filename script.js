@@ -5,40 +5,40 @@ let result = document.getElementById("result");
 function CalculateAgeOnClickButton() {
     let birthDate = new Date(userInput.value);
 
-    let d1 = birthDate.getDate();
-    let m1 = birthDate.getMonth() + 1;
-    let y1 = birthDate.getFullYear();
+    let dayOfBirth = birthDate.getDate();
+    let birthMonth = birthDate.getMonth() + 1;
+    let birthYear = birthDate.getFullYear();
 
     let today = new Date();
 
-    let d2 = today.getDate();
-    let m2 = today.getMonth() + 1;
-    let y2 = today.getFullYear();
+    let currentDay = today.getDate();
+    let currentMonth = today.getMonth() + 1;
+    let currentYear = today.getFullYear();
 
-    let d3, m3, y3;
+    let diffInDays, diffInMonths, diffInYears;
 
-    y3 = y2 - y1;
+    diffInYears = currentYear - birthYear;
 
     // if 2nd month is greater i can do simple subtract
-    if(m2 >= m1) {
-        m3 = m2 - m1;
+    if(currentMonth >= birthMonth) {
+        diffInMonths = currentMonth - birthMonth;
     }else {
         // else i need to decrease year and subtract with base 12
-        y3--;
-        m3 = 12 + m2 - m1;
+        diffInYears--;
+        diffInMonths = 12 + currentMonth - birthMonth;
     }
 
-    if(d2 >= d1) {
-        d3 = d2 - d1;
+    if(currentDay >= dayOfBirth) {
+        diffInDays = currentDay - dayOfBirth;
     }else {
-        m3--;
-        d3 = getDaysInMonth(y1, m1) + d2 - d1;
+        diffInMonths--;
+        diffInDays = getDaysInMonth(birthYear, birthMonth) + currentDay - dayOfBirth;
     }
-    if(m3 < 0) {
-        m3 = 11;
-        y3--;
+    if(diffInMonths < 0) {
+        diffInMonths = 11;
+        diffInYears--;
     }
-    result.innerHTML= `You are <span>${y3}</span> years, <span>${m3}</span> months, <span>${d3}</span> days old.`;
+    result.innerHTML= `You are <span>${diffInYears}</span> years, <span>${diffInMonths}</span> months, <span>${diffInDays}</span> days old.`;
 }
 
 function getDaysInMonth(year, month) {
