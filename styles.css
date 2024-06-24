@@ -81,3 +81,17 @@
     background-size: 30px;
     cursor: pointer;
 }
+
+#result {
+    background: rgba(255,255,255,0.2);
+    width: 450px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    font-size: 22px;
+    color: var(--light-color);
+}
+
+#result span {
+    color: var(--dark-green-color);
+}
