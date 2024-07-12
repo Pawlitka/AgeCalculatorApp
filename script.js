@@ -38,7 +38,15 @@ function handleOnClickAgeCalculateButton() {
         diffInMonths = 11;
         diffInYears--;
     }
-    _RESULT_ELEMENT.innerHTML= `You are <span>${diffInYears}</span> years, <span>${diffInMonths}</span> months, <span>${diffInDays}</span> days old.`;
+    setResultElementInnerHtml({
+        years: diffInYears,
+        months: diffInMonths,
+        days: diffInDays
+    });
+}
+
+function setResultElementInnerHtml(diff) {
+    _RESULT_ELEMENT.innerHTML= `You are <span>${diff.years}</span> years, <span>${diff.months}</span> months, <span>${diff.days}</span> days old.`;
 }
 
 function getDaysInMonth(year, month) {
