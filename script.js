@@ -1,6 +1,6 @@
 let USER_INPUT_ELEMENT = document.getElementById("date")
-userInput.max = new Date().toISOString().split("T")[0];
-let _RESULT_ELEMENT = document.getElementById("result");
+USER_INPUT_ELEMENT.max = new Date().toISOString().split("T")[0];
+let RESULT_ELEMENT = document.getElementById("result");
 
 function handleOnClickAgeCalculateButton() {
     let birthDate = new Date(USER_INPUT_ELEMENT.value);
@@ -46,7 +46,7 @@ function handleOnClickAgeCalculateButton() {
 }
 
 function setResultElementInnerHtml(diff) {
-    _RESULT_ELEMENT.innerHTML= `You are <span>${diff.years}</span> years, <span>${diff.months}</span> months, <span>${diff.days}</span> days old.`;
+    RESULT_ELEMENT.innerHTML= `You are <span>${diff.years}</span> years, <span>${diff.months}</span> months, <span>${diff.days}</span> days old.`;
 }
 
 function getDaysInMonth(year, month) {
